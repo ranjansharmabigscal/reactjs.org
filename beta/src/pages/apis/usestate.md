@@ -359,13 +359,14 @@ h1 { display: block; margin: 10px; }
 You can put objects and arrays into state. In React, state is considered read-only, so **you should *replace* it rather than *mutate* your existing objects**. For example, if you have a `form` object in state, don't update it like this:
 
 ```js
-// Don't mutate an object in state like this:
+// 🚩 Don't mutate an object in state like this:
 form.firstName = 'Taylor';
 ```
 
 Instead, replace the whole object by creating a new one:
 
 ```js
+// ✅ Replace state with a new object
 setForm({
   ...form,
   firstName: 'Taylor'
